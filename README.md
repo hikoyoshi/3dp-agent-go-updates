@@ -2,11 +2,13 @@
 
 Windows x64 Portable 開發預覽版，負責 CPD Booking 與區域網路內 3D 印表機的整合。
 
-目前版本：[0.2.0-dev](https://github.com/hikoyoshi/3dp-agent-go-updates/releases/tag/v0.2.0-dev)。此倉庫用於發佈套件與已簽章更新資訊。
+此版同步 Python 0.3.12 的多檔授權修正。部署前請先更新 CPD Server，確認 Job detail 提供 `print_authorized` 與 `print_denial_reason`。支援多檔任意順序、有效時段重印及重新啟動後的檔名授權核對。
+
+目前版本：[0.2.1-dev](https://github.com/hikoyoshi/3dp-agent-go-updates/releases/tag/v0.2.1-dev)。此倉庫用於發佈套件與已簽章更新資訊。
 
 ## 安裝與啟動
 
-1. 從 Release 下載 `3DP-Agent-Go-0.2.0-dev-windows-x64.zip` 並解壓到可寫入的資料夾。
+1. 從 Release 下載 `3DP-Agent-Go-0.2.1-dev-windows-x64.zip` 並解壓到可寫入的資料夾。
 2. 執行 `Start-Agent.cmd`，依畫面顯示的本機網址開啟管理介面。
 3. 設定管理密碼，先用 Fake 機台驗證流程，再依套件內 `docs/hardware-validation.md` 進行現場驗收。
 
@@ -26,6 +28,6 @@ Windows x64 Portable 開發預覽版，負責 CPD Booking 與區域網路內 3D 
 
 ## 驗證狀態
 
-0.2.0-dev 已通過本機 Go 測試、MQTT／FTPS／WebSocket 協定測試，以及從 GitHub 將 0.1.4 升級到 0.2.0 的實際流程（包含機台未知時下載、一般更新暫緩與強制更新）。
+0.2.1-dev 已通過本機 Go 測試、MQTT／FTPS／WebSocket 協定測試，以及從 GitHub 將 0.2.0 升級到 0.2.1 的實際流程（包含機台未知時下載、一般更新暫緩與強制更新）。
 
 P2S／X1C 實機及正式 CPD 部署驗收尚未執行；此版本仍為預覽版。首輪現場範圍為第一盤切片、外掛線材（AMS 關閉）、64 MiB 以內；遠端刪檔預設關閉。請依套件內驗收文件逐項確認後再交接現有 Agent。
