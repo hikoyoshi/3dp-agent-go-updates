@@ -4,11 +4,11 @@ Windows x64 Portable 開發預覽版，負責 CPD Booking 與區域網路內 3D 
 
 此版對齊 Python 0.3.13–0.3.15：停止／故障後保留重印授權、修正換檔遙測及離線回報順序、補齊更新安全判斷。部署前請先更新 CPD 的 stopped 契約與 Job detail 授權欄位。
 
-目前版本：[0.2.2-dev](https://github.com/hikoyoshi/3dp-agent-go-updates/releases/tag/v0.2.2-dev)。此倉庫用於發佈套件與已簽章更新資訊。
+目前版本：[0.2.3-dev](https://github.com/hikoyoshi/3dp-agent-go-updates/releases/tag/v0.2.3-dev)。新增 LAN／Tailscale 遠端管理、匯入時啟用機台連線選項，修正 CPD 健康測試與 HMS 狀態判斷。此倉庫用於發佈套件與已簽章更新資訊。
 
 ## 安裝與啟動
 
-1. 從 Release 下載 `3DP-Agent-Go-0.2.2-dev-windows-x64.zip` 並解壓到可寫入的資料夾。
+1. 從 Release 下載 `3DP-Agent-Go-0.2.3-dev-windows-x64.zip` 並解壓到可寫入的資料夾。
 2. 執行 `Start-Agent.cmd`，依畫面顯示的本機網址開啟管理介面。
 3. 設定管理密碼，先用 Fake 機台驗證流程，再依套件內 `docs/hardware-validation.md` 進行現場驗收。
 
@@ -30,4 +30,4 @@ Windows x64 Portable 開發預覽版，負責 CPD Booking 與區域網路內 3D 
 
 本機驗證涵蓋 Fake 多檔重印、暫停／故障／斷線、回報順序、MQTT／FTPS／WebSocket 契約，以及真正 Core／Launcher 程序的簽章更新、卡死復原與回復。詳細測試結果見套件內 docs/validation.md。
 
-P2S／X1C 實機及正式 CPD 部署驗收尚未執行；此版本仍為預覽版。首輪現場範圍為第一盤切片、外掛線材（AMS 關閉）、64 MiB 以內；遠端刪檔預設關閉。請依套件內驗收文件逐項確認後再交接現有 Agent。
+0.2.3 已完成現場 10 台機台 MQTT／FTPS 登入、CPD 授權、WebSocket 與狀態回報驗證；尚未執行新工作下載、真實檔案傳送或實際列印驗收，此版本仍為預覽版。首輪列印驗收範圍為第一盤切片、外掛線材（AMS 關閉）、64 MiB 以內；遠端刪檔預設關閉。遠端管理預設關閉，設定方式見套件內 `docs/release-0.2.3.md`。
